@@ -88,16 +88,16 @@ console.log(dealer.dealerWeight()); //return the weight of the total cards
 //Normal function
 var stay = function () {
 
-    
+
     var extraCard = deck.pop();
-    dealer.dealerHand.push(extraCard);
+    dealer.dealerHand.push(extraCard);    //dealer hand - empty array
     for (i = 0; i < dealer.dealerHand; i++) {
-        totalDealerWeight += dealerCards[i].Weight
+        totalDealerWeight += dealerCards[i].Weight   //adding weight to it
     }
 
     console.log(extraCard)
-    console.log(dealer.dealerWeight())
-    console.log(player1.getWeight())
+    console.log(dealer.dealerWeight())   //Dealers cards final weight total
+    console.log(player1.getWeight())  // Players cards final weight total
 
 
     if (dealer.dealerWeight() > player1.getWeight() && dealer.dealerWeight() > 21) {
