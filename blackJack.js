@@ -32,32 +32,7 @@ shuffle();
 
 
 //constructor function for creating object
-function Player(name) {
-    this.name = name;
-    this.hand = [];
-    this.draw = function () {  
-        for (let i = 0; i < 2; i++) {
-            var card = deck.pop();
-            this.hand.push(card)
-        }
-        return this.hand;
-    }
-  //will give the weight of the total cards
-    this.getWeight = function () {
-        var totalweight = 0;
-        var cards = this.hand;
-        for (var i = 0; i < cards.length; i++) {
-            totalweight += cards[i].Weight
-        }
-        return totalweight
-    }
-}
 
-
-
-const player1 = new Player('Sameer');  //making instance of the constructor object
-console.log(player1.draw())       //returns this.hand array - collection of cards which player have
-console.log(player1.getWeight())  
 
 //constructor function to make dealer
 function Dealer() {
@@ -126,17 +101,13 @@ var stay = function () {
             }
         };
 
-
-
-
-
     // for (i = 0; i < 6; i++) {}
 
 
     // console.log(extraCard)
     // console.log(dealer.dealerWeight())
 }
-stay()
+// stay()
 
 
 
@@ -158,3 +129,34 @@ var hitme = function () {
 // hitme()
 
 
+//Start blackja
+var start = function(){
+    console.log("yea baby")
+    shuffle()
+    function Player(name) {
+        this.name = name;
+        this.hand = [];
+        this.draw = function () {  
+            for (let i = 0; i < 2; i++) {
+                var card = deck.pop();
+                this.hand.push(card)
+            }
+            return this.hand;
+        }
+      //will give the weight of the total cards
+        this.getWeight = function () {
+            var totalweight = 0;
+            var cards = this.hand;
+            for (var i = 0; i < cards.length; i++) {
+                totalweight += cards[i].Weight
+            }
+            return totalweight
+        }
+    }
+    
+    
+    
+    const player1 = new Player('Sameer');  //making instance of the constructor object
+    console.log(player1.draw())       //returns this.hand array - collection of cards which player have
+    console.log(player1.getWeight())  
+}
